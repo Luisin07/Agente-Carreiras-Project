@@ -1,7 +1,3 @@
-Com certeza! Vou ajustar o texto para corrigir os pequenos deslizes e adicionar as seções que vão elevar o nível do seu repositório.
-
-Aqui está a versão editada e pronta para copiar e colar:
-
 Projeto Agente de Carreira Adaptativa (ACA)
 O Agente de Carreira Adaptativa (ACA) é um projeto acadêmico desenvolvido em Python com foco em automação e Inteligência Artificial, que explora como Large Language Models (LLMs) podem apoiar profissionais diante das transformações do mercado de trabalho impulsionadas pela IA.
 
