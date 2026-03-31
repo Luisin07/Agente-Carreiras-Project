@@ -1,56 +1,73 @@
-# Projeto Agente de Carreira Adaptativa (ACA) 🤖🚀
+Adaptive Career Agent (ACA)
 
-O **Agente de Carreira Adaptativa (ACA)** é uma solução inteligente desenvolvida em Python que utiliza **Large Language Models (LLMs)** para atuar como um consultor estratégico de carreira. O projeto foca no fenômeno do *Future of Work*, ajudando profissionais a navegarem na transição entre o mercado tradicional e a era da automação.
+An AI-powered career strategy assistant designed to help professionals navigate the impact of automation and evolving job markets.
 
----
+Overview
 
-## 🎯 Objetivo e Visão Geral
+The Adaptive Career Agent (ACA) is an intelligent system built with Python and Large Language Models (LLMs) that analyzes career risks and generates actionable strategies for professional growth.
 
-O objetivo central é mitigar o impacto da automação através de análises preditivas e planos de ação personalizados. O agente não apenas identifica riscos, mas atua proativamente na sugestão de:
-* **Upskilling:** Identificação de gaps técnicos e sugestão de cursos/habilidades complementares.
-* **Reskilling:** Mapeamento de competências transferíveis para migração total de área.
+The system focuses on the "Future of Work" scenario, helping users transition from traditional roles to technology-augmented careers.
 
----
+Core Features
+Automation Risk Analysis
 
-## ✨ Funcionalidades Implementadas
+Evaluates the probability of automation for user-defined tasks using natural language processing and LLM reasoning.
 
-### 🔍 1. Engine de Análise de Risco de Automação
-O sistema processa a descrição das tarefas diárias do usuário e, através de processamento de linguagem natural, estima a probabilidade de automação de cada atividade, gerando um score de vulnerabilidade profissional.
+Skill Roadmap Generation
 
-### 🗺️ 2. Gerador de Roadmap de Competências
-Com base no perfil atual, o agente consulta uma base de conhecimento (via LLM) para listar as ferramentas e conceitos de IA que o profissional precisa dominar para se tornar um "trabalhador aumentado" pela tecnologia.
+Identifies skill gaps and recommends:
 
-### 🎭 3. Simulador de Entrevistas de Alta Fidelidade
-O agente assume o papel de um recrutador técnico exigente. Ele utiliza **Engenharia de Prompt** avançada para:
-* Avaliar respostas baseadas em lógica e profundidade.
-* Fornecer feedback instantâneo sobre pontos de melhoria.
-* Simular cenários de pressão reais do mercado.
+Upskilling paths (enhancing current capabilities)
+Reskilling strategies (transitioning to new roles)
+Interview Simulation Engine
 
----
+Simulates technical interviews with:
 
-## 🛠️ Stack Tecnológica e Arquitetura
+Realistic recruiter behavior
+Logical and depth-based evaluation
+Instant feedback and improvement suggestions
+Tech Stack
+Python 3.x
+OpenAI API (GPT-4 / GPT-3.5)
+Prompt Engineering (Zero-shot / Few-shot)
+Jupyter Notebook (Google Colab)
+Architecture Highlights
+Modular prompt design for different agent roles
+System role definition for behavior control
+Context-aware response generation
+Secure API key handling via environment variables
+Getting Started
+1. Install dependencies
+pip install openai
+2. Configure environment
 
-* **Linguagem:** Python 3.x
-* **Modelo de IA:** OpenAI GPT-4 / GPT-3.5 (via API)
-* **Técnicas de IA:**
-    * *Zero-shot e Few-shot Prompting* para classificação de riscos.
-    * *System Role Definition* para criação de personas de mentoria.
-* **Ambiente:** Jupyter Notebook (Google Colab) com integração de variáveis de ambiente para segurança de chaves.
+Set your OpenAI API key:
 
----
+OPENAI_API_KEY=your_api_key_here
+3. Run the notebook
 
-## 🚀 Como Configurar e Rodar
+Open in Google Colab and follow instructions to start the interaction.
 
-1. **Chave de API:** Obtenha sua `OPENAI_API_KEY` no painel da OpenAI.
-2. **Ambiente:** No Google Colab, adicione sua chave nas "Secrets" (ícone de chave na lateral) com o nome `OPENAI_API_KEY`.
-3. **Execução:**
-    ```python
-    # O código utiliza a biblioteca openai
-    pip install openai
-    ```
-4. **Interação:** Siga as instruções no notebook para inserir seu cargo atual e iniciar a consultoria.
+Use Case
 
----
+The ACA is designed for:
 
-## 🎓 Contexto do Projeto
-Desenvolvido para a disciplina de **Prompt e Inteligência Artificial (Ciência da Computação)**, visando a aplicação prática de agentes autônomos no planejamento de carreira moderno.
+Students entering the job market
+Professionals at risk of automation
+Developers exploring AI-driven applications
+Purpose
+
+This project demonstrates:
+
+Practical use of LLMs in real-world scenarios
+Prompt engineering techniques
+AI-driven decision support systems
+Future Improvements
+Integration with real job market APIs
+Persistent user profiles
+Dashboard for career tracking
+Advanced scoring models
+Author
+
+Luis Otávio Santini Feitosa
+github.com/Luisin07
