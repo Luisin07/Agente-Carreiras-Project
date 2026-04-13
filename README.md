@@ -67,7 +67,6 @@ Integration with real job market APIs
 Persistent user profiles
 Dashboard for career tracking
 Advanced scoring models
-Author
 
-Luis Otávio Santini Feitosa
-github.com/Luisin07
+Author:
+Luis Otávio Santini Feitosa - https://github.com/Luisin07
