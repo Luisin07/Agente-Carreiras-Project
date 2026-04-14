@@ -1,72 +1,82 @@
-Adaptive Career Agent (ACA)
+# 🧠 Adaptive Career Agent (ACA)
 
-An AI-powered career strategy assistant designed to help professionals navigate the impact of automation and evolving job markets.
+An AI-powered career strategy assistant that analyzes automation risk, generates personalized upskilling and reskilling plans, and simulates technical interviews using LLMs.
 
-Overview
+## 🔗 Run on Google Colab
 
-The Adaptive Career Agent (ACA) is an intelligent system built with Python and Large Language Models (LLMs) that analyzes career risks and generates actionable strategies for professional growth.
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ua69ENIZElQ7JBIOpYJfo1zyefqExJJQ?usp=sharing)
 
-The system focuses on the "Future of Work" scenario, helping users transition from traditional roles to technology-augmented careers.
+> You'll need an OpenAI API key to run the notebook.
 
-Core Features
-Automation Risk Analysis
+---
 
-Evaluates the probability of automation for user-defined tasks using natural language processing and LLM reasoning.
+## Overview
 
-Skill Roadmap Generation
+The ACA processes a professional profile through 4 sequential stages, each powered by a specialized LLM agent with structured JSON output:
 
-Identifies skill gaps and recommends:
+**F1 — Automation Risk Analysis**
+Evaluates the automation probability of a given profession and identifies critical hard and soft skills.
 
-Upskilling paths (enhancing current capabilities)
-Reskilling strategies (transitioning to new roles)
-Interview Simulation Engine
+**F2 — Upskilling Plan**
+Generates a personalized skill enhancement plan with 5 learning resources based on the F1 output.
 
-Simulates technical interviews with:
+**F3 — Reskilling Roadmap**
+Maps transferable skills and identifies the 5 new skills required for a career transition.
 
-Realistic recruiter behavior
-Logical and depth-based evaluation
-Instant feedback and improvement suggestions
-Tech Stack
-Python 3.x
-OpenAI API (GPT-4 / GPT-3.5)
-Prompt Engineering (Zero-shot / Few-shot)
-Jupyter Notebook (Google Colab)
-Architecture Highlights
-Modular prompt design for different agent roles
-System role definition for behavior control
-Context-aware response generation
-Secure API key handling via environment variables
-Getting Started
-1. Install dependencies
-pip install openai
-2. Configure environment
+**F4 — Interview Simulation**
+Simulates a technical interview with 3 questions, evaluates each response on clarity, relevance and depth, and generates a final feedback report.
 
-Set your OpenAI API key:
+---
 
-OPENAI_API_KEY=your_api_key_here
-3. Run the notebook
+## Architecture
 
-Open in Google Colab and follow instructions to start the interaction.
+Each stage is an independent agent with its own system prompt, enforcing structured JSON output. Stages are chained — F2 receives F1's output, F4 uses F3's target area.
+F1 (Risk Analysis)
+↓
+F2 (Upskilling Plan) ← uses F1 skills
+F3 (Reskilling Roadmap)
+↓
+F4 (Interview Simulation) ← uses F3 target area
 
-Use Case
+**Key implementation decisions:**
+- Zero-shot and few-shot prompt engineering for consistent JSON output
+- Retry logic with exponential backoff for rate limit handling (429)
+- JSON extraction utility that handles malformed LLM responses
+- System role definition for each agent's behavior scope
 
-The ACA is designed for:
+---
 
-Students entering the job market
-Professionals at risk of automation
-Developers exploring AI-driven applications
-Purpose
+## Tech Stack
 
-This project demonstrates:
+- Python 3.x
+- OpenAI API (GPT-4o-mini)
+- Prompt Engineering (Zero-shot / Few-shot)
+- Google Colab / Jupyter Notebook
 
-Practical use of LLMs in real-world scenarios
-Prompt engineering techniques
-AI-driven decision support systems
-Future Improvements
-Integration with real job market APIs
-Persistent user profiles
-Dashboard for career tracking
-Advanced scoring models
+---
 
-Author:
-Luis Otávio Santini Feitosa - https://github.com/Luisin07
+## How to Run
+
+1. Open the notebook via the Colab button above
+2. Run the first cell and paste your OpenAI API key when prompted
+3. Run all cells — the full F1→F4 pipeline executes automatically
+4. The final report prints structured JSON output for each stage plus a markdown feedback summary
+
+---
+
+## Sample Input
+
+```python
+PROF_F1 = "Analista de Marketing Digital"
+TAREFAS_F1 = "Gestão de campanhas pagas, criação de relatórios de performance, organização de dados de CRM."
+AREA_INTERESSE_F3 = "Analista de Dados (foco em Business Intelligence)"
+```
+
+---
+
+## Authors
+
+- Luis Otavio Santini Feitosa — [GitHub](https://github.com/Luisin07)
+- Lucas Andrade Souza
+
+*Academic project — Computer Science @ FIAP | Prompt and Artificial Intelligence*
